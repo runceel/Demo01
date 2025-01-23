@@ -8,6 +8,10 @@ root = true
 indent_style = space
 # (Please don't specify an indent_size here; that has too many unintended consequences.)
 
+# Markdown files
+[*.md]
+charset = utf-8-bom
+
 # Code files
 [*.{cs,csx,vb,vbx}]
 indent_size = 4
