@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "新しいプロファイル",
+    "Projects": [
+      {
+        "Path": "DemoFunctionApp\\DemoFunctionApp.csproj",
+        "Action": "Start",
+        "DebugTarget": "DemoFunctionApp"
+      },
+      {
+        "Path": "AlertClient\\AlertClient.csproj",
+        "Action": "Start",
+        "DebugTarget": "https"
+      }
+    ]
+  }
+]

@@ -1,0 +1,11 @@
+### 100 ˆÈã‚ªˆÙí’l
+POST http://localhost:7147/api/AddData
+Content-Type: application/json
+
+[
+    { "value": 9999 },
+    { "value": 0 },
+    { "value": 210 },
+    { "value": 30 },
+    { "value": 50 }
+]

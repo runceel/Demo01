@@ -1,0 +1,33 @@
+﻿@page "/"
+@rendermode InteractiveServer
+
+<PageTitle>Home</PageTitle>
+
+<FluentLabel Typo="Typography.H3">アラート監視画面</FluentLabel>
+
+@if (_hubConnection == null)
+{
+    <FluentStack Orientation="Orientation.Vertical">
+        <p>監視サービスに接続</p>
+        <FluentButton OnClick="Connect" Appearance="Appearance.Accent">接続</FluentButton>
+    </FluentStack>
+}
+else
+{
+    @if(_alertDatas.Count == 0)
+    {
+        <FluentButton OnClick="Disconnect" Appearance="Appearance.Stealth">切断</FluentButton>
+        <FluentProgressRing />
+        <FluentLabel Typo="Typography.Body">アラートの受信待機中…</FluentLabel>
+    }
+    else
+    {
+        <FluentButton OnClick="Clear" Appearance="Appearance.Accent">データ クリア</FluentButton>
+        <FluentButton OnClick="Disconnect" Appearance="Appearance.Stealth">切断</FluentButton>
+        <FluentDataGrid Items="_alertDatas.AsQueryable()">
+            <PropertyColumn Property="p => p.PartitionKey" />
+            <PropertyColumn Property="p => p.RowKey" />
+            <PropertyColumn Property="p => p.Value" />
+        </FluentDataGrid>
+    }
+}
